@@ -1,0 +1,119 @@
+# NexT Theme Configuration Override
+# See: https://theme-next.js.org/docs/getting-started/configuration
+
+# Scheme
+scheme: Pisces
+
+# Dark Mode
+darkmode: true
+
+# Menu
+menu:
+  home: / || fa fa-home
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+menu_settings:
+  icons: true
+  badges: false
+
+# Sidebar
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+
+avatar:
+  rounded: true
+  rotated: false
+
+# Social Links
+social:
+  GitHub: https://github.com/cenjing8393-netizen || fab fa-github
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# Footer
+footer:
+  since: 2026
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: "#ff0000"
+  powered: true
+
+# Post
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+# Code block
+codeblock:
+  theme:
+    light: github-dark-dimmed
+    dark: github-dark-dimmed
+  copy_button:
+    enable: true
+    style: flat
+  language: true
+
+# Back to top
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Reading progress
+reading_progress:
+  enable: true
+  start_at: left
+  position: top
+  color: "#37c6c0"
+  height: 3px
+
+# GitHub banner
+github_banner:
+  enable: false
+
+# Local Search
+local_search:
+  enable: false
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# Comments - Utterances
+# Uses GitHub Issues for comments, no OAuth app required
+comments:
+  style: tabs
+  active: utterances
+  storage: true
+  lazyload: false
+
+utterances:
+  enable: true
+  repo: cenjing8393-netizen/tech-blog
+  issue_term: pathname
+  theme: preferred-color-scheme
+
+# Custom file paths (inject custom HTML)
+custom_file_path:
+  head: source/_data/head.njk
+  header: source/_data/header.njk
+
+# Google Tag Manager Container ID
+# 留空 = 不啟用；填入 GTM-XXXXXXX 即開啟 GA 追蹤
+gtm_container_id: ""
+
+# Google AdSense Publisher ID
+# 留空 = 不啟用；填入 ca-pub-XXXXXXXXXXXXXX 即啟用自動廣告
+adsense_client_id: ""

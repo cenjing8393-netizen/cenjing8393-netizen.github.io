@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Inject env vars & build site
+        run: |
+          sed -i "s/gtm_container_id: \"\"/gtm_container_id: \"${{ vars.GTM_CONTAINER_ID }}\"/" _config.next.yml
+          sed -i "s/adsense_client_id: \"\"/adsense_client_id: \"${{ vars.ADSENSE_CLIENT_ID }}\"/" _config.next.yml
+          node ./node_modules/hexo-cli/bin/hexo generate
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
