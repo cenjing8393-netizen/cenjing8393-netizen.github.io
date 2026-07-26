@@ -17,7 +17,7 @@ language: zh-TW
 timezone: Asia/Taipei
 
 # URL
-url: https://cenjing8393-netizen.github.io/tech-blog
+url: https://cenjing8393-netizen.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
