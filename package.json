@@ -25,7 +25,7 @@
     "hexo-theme-next": "^8.28.0"
   },
   "devDependencies": {
-    "picgo": "^3.0.0",
+    "picgo": "^3.0.1",
     "picgo-plugin-github-plus": "^1.2.3"
   }
 }
