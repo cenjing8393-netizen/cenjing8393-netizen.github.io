@@ -101,7 +101,7 @@ comments:
 
 utterances:
   enable: true
-  repo: cenjing8393-netizen/tech-blog
+  repo: cenjing8393-netizen/cenjing8393-netizen.github.io
   issue_term: pathname
   theme: preferred-color-scheme
 
